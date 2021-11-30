@@ -10,11 +10,18 @@ public class Profile {
     private String rg;
     private String cpf;
     public String telefone;
+    private User user;
 
-    public String getProfile(Integer userId) {
-        return "";
+    public Profile(User user) {
+        this.user = user;
     }
-    private void createDataProfile(Integer userId) {}
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public String getProfile(Integer userId) { return ""; }
+    private void createDataProfile() { }
     private void updateDataProfile(Integer userId) {}
     private void deleteDataProfile(Integer userId) {}
 }

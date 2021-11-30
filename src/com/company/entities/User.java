@@ -1,20 +1,42 @@
 package com.company.entities;
 
 public class User {
-    public String nome;
+    private int usuarioId;
+    private String nome;
     private String password;
-    private Integer UsuarioId;
 
-    public String getUserData(Integer usuarioId) {
-        return "userdata";
+    public int getUserId() {
+
+        return this.usuarioId;
     }
 
-    protected int getUserId() {
-        return 999;
+    public String getNome() {
+
+        return this.nome;
     }
 
-    private void createDataUser() {}
-    private void updateDataUser(int usuarioId) {}
-    private void deleteDataUser(int usuarioId) {}
+    public String getPassword() {
+
+        return this.password;
+    }
+
+    public void createDataUser(int usuarioId, String nome, String password) {
+        this.usuarioId = usuarioId;
+        this.nome = nome;
+        this.password = password;
+    }
+    public void updateDataUser(String nome, String password) {
+        this.nome = nome;
+        this.password = password;
+    }
+    public void deleteDataUser(int usuarioId) throws Exception {
+        if(usuarioId > 0) {
+            this.nome = "";
+            this.password = "";
+            return;
+        }
+        throw new Exception("informe um id");
+
+    }
 
 }
